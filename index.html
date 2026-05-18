@@ -21,27 +21,17 @@
 </div>
 
 <script>
-
 function openSite(){
+    let pass = document.getElementById("password").value;
 
-let pass =
-document.getElementById("password").value;
-
-if(pass == "Love"){
-
-document.querySelector(".login").style.display="none";
-
-document.getElementById("main").style.display="block";
-
-}else{
-
-alert("Wrong Password");
-
+    if(pass == "Love"){
+        document.querySelector(".login").style.display="none";
+        document.getElementById("main").style.display="block";
+        
+        // هذا السطر الإضافي يضمن تشغيل الأغنية فوراً عند كتابة الباسورد الصحيح والضغط على الزر
+        document.querySelector("audio").play();
+    } else {
+        alert("Wrong Password");
+    }
 }
-
-}
-
 </script>
-
-</body>
-</html>

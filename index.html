@@ -1,120 +1,46 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maryoma ❤️</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #990000;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: white;
-            text-align: center;
-            direction: rtl;
-            overflow: hidden;
-        }
-        .container {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            max-width: 90%;
-            width: 400px;
-            backdrop-filter: blur(5px);
-        }
-        h2 {
-            margin-bottom: 20px;
-            color: #ffb3b3;
-        }
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-        input[type="password"] {
-            width: 80%;
-            padding: 12px;
-            border: none;
-            border-radius: 25px;
-            margin-bottom: 15px;
-            outline: none;
-            font-size: 16px;
-            text-align: center;
-        }
-        button {
-            background-color: #ff4d4d;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            font-size: 16px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: 0.3s;
-            font-weight: bold;
-        }
-        button:hover {
-            background-color: #ff1a1a;
-        }
-        .main {
-            display: none;
-        }
-        .music {
-            margin-top: 15px;
-        }
-        audio {
-            width: 100%;
-            margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
+<button onclick="openSite()">Unlock 💕</button>
 
-<div class="container">
-    <!-- واجهة تسجيل الدخول -->
-    <div class="login" id="loginSection">
-        <h2>أدخل كلمة المرور 💕</h2>
-        <input type="password" id="password" placeholder="اكتب كلمة المرور هنا...">
-        <br>
-        <button onclick="openSite()">Unlock 💕</button>
-    </div>
+</div>
 
-    <!-- واجهة المفاجأة المحمية -->
-    <div class="main" id="mainSection">
-        <h2>بدايتنا 2025/10/18 💖</h2>
-        <p>
-        اغلي مريومه ف الدنياا كلها ويارب يعجبك وعموما بحبك ي صحبتي وبتمني اشوفك ديماا مبسوطه وفرحانه ي احلي حد جابتو المحله ❤  
-        </p>
-        <div class="music">
-            <audio controls loop id="myTrack">
-                <source src="https://catbox.moe" type="audio/mpeg">
-            </audio>
-        </div>
-    </div>
+<div class="main" id="main">
+
+<h2>بدايتنا 2025/10/18 💖</h2>
+
+<p>
+اغلي مريومه ف الدنياا كلها ويارب يعجبك وعموما بحبك ي صحبتي وبتمني اشوفك ديماا مبسوطه وفرحانه ي احلي حد جابتو المحله ❤  
+</p>
+
+<div class="music">
+
+<audio controls autoplay loop>
+<source src="https://catbox.moe" type="audio/mpeg">
+</audio>
+
+</div>
+
 </div>
 
 <script>
-function openSite(){
-    let pass = document.getElementById("password").value;
 
-    if(pass === "Love"){
-        document.getElementById("loginSection").style.display = "none";
-        document.getElementById("mainSection").style.display = "block";
-        
-        // تشغيل الأغنية فوراً عند الضغط
-        let audio = document.getElementById("myTrack");
-        audio.play().catch(function(error) {
-            console.log("تعذر التشغيل التلقائي: " + error);
-        });
-    } else {
-        alert("Wrong Password");
-    }
+function openSite(){
+
+let pass =
+document.getElementById("password").value;
+
+if(pass == "Love"){
+
+document.querySelector(".login").style.display="none";
+
+document.getElementById("main").style.display="block";
+
+}else{
+
+alert("Wrong Password");
+
 }
+
+}
+
 </script>
 
 </body>

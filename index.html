@@ -1,92 +1,47 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maryoma ❤️</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #990000;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: white;
-            text-align: center;
-        }
-        .container {
-            width: 90%;
-            max-width: 400px;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        input[type="password"] {
-            width: 100%;
-            padding: 15px;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 25px;
-            margin-bottom: 20px;
-            outline: none;
-            text-align: center;
-            box-sizing: border-box;
-            color: #333;
-        }
-        button {
-            background-color: white;
-            color: #990000;
-            border: none;
-            padding: 12px 40px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            border-radius: 25px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-        button:active {
-            transform: scale(0.95);
-        }
-    </style>
-</head>
-<body>
+<button onclick="openSite()">Unlock 💕</button>
 
-    <div class="container">
-        <h1>Maryoma ❤️</h1>
-        <div class="subtitle">my everything</div>
-        <input type="password" id="passInput" placeholder="Password">
-        <br>
-        <button id="unlockBtn">Unlock 💕</button>
-    </div>
+</div>
 
-    <script>
-        document.getElementById('unlockBtn').addEventListener('click', function() {
-            // الباسورد هنا مخفي بطريقة ذكية (معكوس)
-            // الباسورد الفعلي هو Love ولكن كتبناه evoL والبرنامج سيعكسه تلقائياً
-            const secureCheck = "evoL"; 
-            
-            const inputPassword = document.getElementById('passInput').value;
-            const reversedInput = inputPassword.split('').reverse().join('');
+<div class="main" id="main">
 
-            // إذا كتبت الباسورد "Love" بالظبط (مع مراعاة الحرف الكبير L) سيفتح بنجاح
-            if (reversedInput === secureCheck) {
-                alert("كلمة المرور صحيحة! أحبك يا مريومة ❤️");
-            } else {
-                alert("كلمة المرور خاطئة! حاول مجدداً 😢");
-            }
-        });
-    </script>
+<h2>بدايتنا 2025/10/18 💖</h2>
+
+<p>
+اغلي مريومه ف الدنياا كلها ويارب يعجبك وعموما بحبك ي صحبتي وبتمني اشوفك ديماا مبسوطه وفرحانه ي احلي حد جابتو المحله ❤  
+</p>
+
+<div class="music">
+
+<audio controls autoplay loop>
+<source src="https://files.catbox.moe/dbapig.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+</div>
+
+<script>
+
+function openSite(){
+
+let pass =
+document.getElementById("password").value;
+
+if(pass == "Love"){
+
+document.querySelector(".login").style.display="none";
+
+document.getElementById("main").style.display="block";
+
+}else{
+
+alert("Wrong Password");
+
+}
+
+}
+
+</script>
 
 </body>
 </html>

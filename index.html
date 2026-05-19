@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maryoma ❤️</title>
     <style>
-        /* إعدادات الصفحة الخلفية باللون الأسود */
         body {
             margin: 0;
             padding: 0;
@@ -20,8 +19,6 @@
             direction: rtl;
             overflow: hidden;
         }
-        
-        /* الصندوق الرئيسي بتصميم أسود داكن مع حواف حمراء مضيئة */
         .container {
             background: #141414;
             padding: 30px 20px;
@@ -31,21 +28,17 @@
             max-width: 85%;
             width: 360px;
         }
-
         h2 {
             margin-bottom: 20px;
             color: #ff3333;
             font-size: 24px;
         }
-
         p {
             font-size: 17px;
             line-height: 1.7;
             color: #e0e0e0;
             margin-bottom: 25px;
         }
-
-        /* خانة إدخال الباسورد */
         input[type="password"] {
             width: 85%;
             padding: 12px;
@@ -59,13 +52,10 @@
             text-align: center;
             transition: 0.3s;
         }
-
         input[type="password"]:focus {
             border-color: #ff1a1a;
             box-shadow: 0 0 10px rgba(255, 26, 26, 0.5);
         }
-
-        /* زر الدخول باللون الأحمر */
         button {
             background-color: #ff1a1a;
             color: white;
@@ -78,20 +68,16 @@
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(255, 26, 26, 0.4);
         }
-
         button:hover {
             background-color: #cc0000;
             box-shadow: 0 4px 20px rgba(255, 26, 26, 0.6);
         }
-
         .main {
             display: none;
         }
-
         .music {
             margin-top: 20px;
         }
-
         audio {
             width: 100%;
             border-radius: 10px;
@@ -101,7 +87,6 @@
 <body>
 
 <div class="container">
-    <!-- واجهة تسجيل الدخول -->
     <div class="login" id="loginSection">
         <h2>أدخل كلمة المرور 💕</h2>
         <input type="password" id="password" placeholder="اكتب كلمة المرور هنا...">
@@ -109,7 +94,6 @@
         <button onclick="openSite()">Unlock 💕</button>
     </div>
 
-    <!-- واجهة المفاجأة المحمية -->
     <div class="main" id="mainSection">
         <h2>بدايتنا 2025/10/18 💖</h2>
         <p>
@@ -117,7 +101,8 @@
         </p>
         <div class="music">
             <audio controls loop id="myTrack">
-                <source src="https://catbox.moe" type="audio/mpeg">
+                <!-- تم تغيير الرابط هنا إلى خادم جديد فائق السرعة -->
+                <source src="https://soundhelix.com" type="audio/mpeg">
             </audio>
         </div>
     </div>
@@ -131,7 +116,6 @@ function openSite(){
         document.getElementById("loginSection").style.display = "none";
         document.getElementById("mainSection").style.display = "block";
         
-        // تشغيل الأغنية فوراً وبشكل مضمون عند الضغط
         let audio = document.getElementById("myTrack");
         audio.play().catch(function(error) {
             console.log("تأخر تشغيل الصوت: " + error);

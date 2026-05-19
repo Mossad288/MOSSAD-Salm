@@ -87,6 +87,7 @@
 <body>
 
 <div class="container">
+    <!-- واجهة تسجيل الدخول -->
     <div class="login" id="loginSection">
         <h2>أدخل كلمة المرور 💕</h2>
         <input type="password" id="password" placeholder="اكتب كلمة المرور هنا...">
@@ -94,6 +95,7 @@
         <button onclick="openSite()">Unlock 💕</button>
     </div>
 
+    <!-- واجهة المفاجأة المحمية -->
     <div class="main" id="mainSection">
         <h2>بدايتنا 2025/10/18 💖</h2>
         <p>
@@ -101,8 +103,8 @@
         </p>
         <div class="music">
             <audio controls loop id="myTrack">
-                <!-- تم تغيير الرابط هنا إلى خادم جديد فائق السرعة -->
-                <source src="https://soundhelix.com" type="audio/mpeg">
+                <!-- تم وضع رابط موسيقى فائق السرعة ومضمون من جوجل -->
+                <source src="https://googleapis.com" type="audio/mpeg">
             </audio>
         </div>
     </div>
@@ -116,9 +118,10 @@ function openSite(){
         document.getElementById("loginSection").style.display = "none";
         document.getElementById("mainSection").style.display = "block";
         
+        // تشغيل الموسيقى إجبارياً فور ضغط الزر لتخطي حماية المتصفح
         let audio = document.getElementById("myTrack");
         audio.play().catch(function(error) {
-            console.log("تأخر تشغيل الصوت: " + error);
+            alert("اضغط على تشغيل في مشغل الصوت بالأسفل إذا لم يبدأ تلقائياً!");
         });
     } else {
         alert("Wrong Password");

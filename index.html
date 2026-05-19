@@ -179,7 +179,7 @@
   }
 
   audio {
-    filter: invert(1) hue-rotate(180deg);
+    filter: invert(1) hue-rotate(180deg) brightness(1.2);
     border-radius: 30px;
     width: 100%;
     max-width: 280px;
@@ -232,61 +232,52 @@
       أغلى مريومة في الدنيا كلها، ويارب يعجبك. وعموماً بحبك يا صاحبتي وبتمنى أشوفك دايماً مبسوطة وفرحانة يا أحلى حد جابته المحلة ❤
     </p>
 
+    <!-- تم ضبط الرابط هنا ليقرأ الأغنية مباشرة من ملفات المستودع -->
     <div class="music">
-      <audio id="bgMusic" controls loop>
-        <source src="https://catbox.moe" type="audio/mpeg">
+      <audio id="bgMusic" controls loop preload="auto" src="music.mp3">
       </audio>
     </div>
   </div>
 </div>
 
 <script>
-// تحديد تاريخ البداية (السنة، الشهر - 1، اليوم) -> أكتوبر هو شهر 9 برمجياً لأن العد يبدأ من 0
 const startDate = new Date(2025, 9, 18, 0, 0, 0); 
 
 function updateTimer() {
   const now = new Date();
   const diff = now - startDate;
 
-  // حساب الأيام والساعات والدقائق والثواني
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-  // تحديث الأرقام في الواجهة
   document.getElementById("days").innerText = days;
   document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
   document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
   document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
 }
 
-// دالة لإنشاء القلوب المتساقطة
 function createHeart() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
   
-  // اختيار شكل عشوائي للقلب
   const heartTypes = ["❤️", "💖", "💕", "💗", "❤"];
   heart.innerText = heartTypes[Math.floor(Math.random() * heartTypes.length)];
   
-  // مكان ظهور عشوائي وحجم عشوائي
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.fontSize = Math.random() * 15 + 15 + "px";
   
-  // سرعة سقوط عشوائية
   const duration = Math.random() * 3 + 3; 
   heart.style.animationDuration = duration + "s";
   
   document.body.appendChild(heart);
   
-  // حذف القلب بعد انتهاء حركته لتوفير ذاكرة المتصفح
   setTimeout(() => {
     heart.remove();
   }, duration * 1000);
 }
 
-// تشغيل القلوب باستمرار في الخلفية
 setInterval(createHeart, 400);
 
 function openSite() {
@@ -299,14 +290,19 @@ function openSite() {
     loginSection.style.display = "none";
     mainSection.classList.add("show");
     
-    // تشغيل العداد وتحديثه كل ثانية
     updateTimer();
     setInterval(updateTimer, 1000);
     
-    // تشغيل الموسيقى تلقائياً بعد الضغط
-    music.play().catch(error => {
-      console.log("Autoplay prevented.");
-    });
+    // تشغيل تلقائي آمن
+    setTimeout(function() {
+        music.play().then(() => {
+            console.log("Success");
+        }).catch(err => {
+            music.muted = false;
+            music.play();
+        });
+    }, 100);
+
   } else {
     alert("Wrong Password");
   }
@@ -315,4 +311,5 @@ function openSite() {
 
 </body>
 </html>
+
 

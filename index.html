@@ -1,46 +1,145 @@
-<button onclick="openSite()">Unlock 💕</button>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maryoma ❤️</title>
+    <style>
+        /* إعدادات الصفحة الخلفية باللون الأسود */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0b0b0b;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            direction: rtl;
+            overflow: hidden;
+        }
+        
+        /* الصندوق الرئيسي بتصميم أسود داكن مع حواف حمراء مضيئة */
+        .container {
+            background: #141414;
+            padding: 30px 20px;
+            border-radius: 20px;
+            border: 2px solid #ff1a1a;
+            box-shadow: 0 0 20px rgba(255, 26, 26, 0.2);
+            max-width: 85%;
+            width: 360px;
+        }
 
-</div>
+        h2 {
+            margin-bottom: 20px;
+            color: #ff3333;
+            font-size: 24px;
+        }
 
-<div class="main" id="main">
+        p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #e0e0e0;
+            margin-bottom: 25px;
+        }
 
-<h2>بدايتنا 2025/10/18 💖</h2>
+        /* خانة إدخال الباسورد */
+        input[type="password"] {
+            width: 85%;
+            padding: 12px;
+            border: 1px solid #333;
+            background-color: #222;
+            color: white;
+            border-radius: 25px;
+            margin-bottom: 15px;
+            outline: none;
+            font-size: 16px;
+            text-align: center;
+            transition: 0.3s;
+        }
 
-<p>
-اغلي مريومه ف الدنياا كلها ويارب يعجبك وعموما بحبك ي صحبتي وبتمني اشوفك ديماا مبسوطه وفرحانه ي احلي حد جابتو المحله ❤  
-</p>
+        input[type="password"]:focus {
+            border-color: #ff1a1a;
+            box-shadow: 0 0 10px rgba(255, 26, 26, 0.5);
+        }
 
-<div class="music">
+        /* زر الدخول باللون الأحمر */
+        button {
+            background-color: #ff1a1a;
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 26, 26, 0.4);
+        }
 
-<audio controls autoplay loop>
-<source src="https://catbox.moe" type="audio/mpeg">
-</audio>
+        button:hover {
+            background-color: #cc0000;
+            box-shadow: 0 4px 20px rgba(255, 26, 26, 0.6);
+        }
 
-</div>
+        .main {
+            display: none;
+        }
 
+        .music {
+            margin-top: 20px;
+        }
+
+        audio {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- واجهة تسجيل الدخول -->
+    <div class="login" id="loginSection">
+        <h2>أدخل كلمة المرور 💕</h2>
+        <input type="password" id="password" placeholder="اكتب كلمة المرور هنا...">
+        <br>
+        <button onclick="openSite()">Unlock 💕</button>
+    </div>
+
+    <!-- واجهة المفاجأة المحمية -->
+    <div class="main" id="mainSection">
+        <h2>بدايتنا 2025/10/18 💖</h2>
+        <p>
+        اغلي مريومه ف الدنياا كلها ويارب يعجبك وعموما بحبك ي صحبتي وبتمني اشوفك ديماا مبسوطه وفرحانه ي احلي حد جابتو المحله ❤  
+        </p>
+        <div class="music">
+            <audio controls loop id="myTrack">
+                <source src="https://catbox.moe" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
 </div>
 
 <script>
-
 function openSite(){
+    let pass = document.getElementById("password").value;
 
-let pass =
-document.getElementById("password").value;
-
-if(pass == "Love"){
-
-document.querySelector(".login").style.display="none";
-
-document.getElementById("main").style.display="block";
-
-}else{
-
-alert("Wrong Password");
-
+    if(pass === "Love"){
+        document.getElementById("loginSection").style.display = "none";
+        document.getElementById("mainSection").style.display = "block";
+        
+        // تشغيل الأغنية فوراً وبشكل مضمون عند الضغط
+        let audio = document.getElementById("myTrack");
+        audio.play().catch(function(error) {
+            console.log("تأخر تشغيل الصوت: " + error);
+        });
+    } else {
+        alert("Wrong Password");
+    }
 }
-
-}
-
 </script>
 
 </body>
